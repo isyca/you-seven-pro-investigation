@@ -11,15 +11,17 @@
 
 #define WIFI_SSID                   "myiotSSID"       // not my SSID
 #define WIFI_PASS                   "Password123"     // not my password
-#define DELAY_RETRY_MS              5000              // delay 5 seconds before trying again
-#define DELAY_LOOP_MS               60000             // check WiFi status every 1 min
+#define DELAY_RETRY_MS              10000             // delay 10 seconds before trying again
+#define DELAY_LOOP_MS               30000             // restart every 30-seconds
 
 static const char* TAG = "you-seven-pro-24-investigation";
 
 void connectWifi() {
   WiFi.begin(WIFI_SSID, WIFI_PASS);
+  delay(DELAY_RETRY_MS);
 
   while (WiFi.status() != WL_CONNECTED) {
+    WiFi.reconnect();
     delay(DELAY_RETRY_MS);
     ESP_LOGI(TAG, "WiFi connecting.");
   }
@@ -29,17 +31,12 @@ void connectWifi() {
 
 void setup() {
   ESP_LOGI(TAG, "First WiFI connect at setup.");
-  delay(DELAY_RETRY_MS);
   connectWifi();
 }
 
 
 void loop() {
-  if  (WiFi.status() != WL_CONNECTED) {
-    ESP_LOGW(TAG, "WiFI disconnected. Now retrying...");
-    WiFi.reconnect();
-  }
-
-  ESP_LOGW(TAG, ".");
+  ESP_LOGW(TAG, "WiFi Connected. Board paused, awaiting restart.");
   delay(DELAY_LOOP_MS);
+  ESP.restart();
 }

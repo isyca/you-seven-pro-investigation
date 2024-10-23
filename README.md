@@ -1,15 +1,17 @@
 ## What is this?
 
-basically, im fed up with smart home devices that are on 2.4Ghz getting offline and we all want to reach out to Ubiquiti -- to get this fixed up already.
+Basically, im fed up with smart home devices and Arduino IoT custom builds that are on 2.4Ghz WiFi getting offline. The community that uses Ubiquiti in this manner all want to reach out to Ubiquiti to get this fixed up already.
 
-a lot of prosumers are excited with Ubiquiti ecosystem (I myself am a big fan) it is time for Ubiquiti to act on this. A lot of reddit posts, youtube "do not buy", and feedback directly on your AP firmware release notes forum
+A lot of prosumers are excited with using Ubiquiti ecosystem (I myself am a big fan) it is time for Ubiquiti to act on this. A lot of reddit posts, youtube "do not buy", and feedback directly on their release notes forum.
+
+To Ubiquiti -- please do consider a product recall, right now. *This is embarassing.*
 
 [mine](https://community.ui.com/releases/UniFi-Access-Point-7-0-66/edfb7cb4-c629-4e3b-a362-549eec2e0e1b#comment/0943066a-f70f-405e-b8e9-6cfb3f4e2ad7) 
 
+[Ubiquiti's attempt fix, but pulled it out](https://community.ui.com/releases/UniFi-Access-Point-7-0-73/aa91657a-1df6-4fdb-813c-af9f603da5dc)
 
-[Ubiquiti's attempt but pulled it out](https://community.ui.com/releases/UniFi-Access-Point-7-0-73/aa91657a-1df6-4fdb-813c-af9f603da5dc)
+[Oct 22 attempt fix firmware 7.0.76](https://community.ui.com/releases/UniFi-Access-Point-7-0-76/75e6ab7f-a1f8-40d1-9cf2-be0ad75cb7ce)
 
--- please do consider a product recall, right now. *This is embarassing.*
 
 #### UniFi APs in my environment
 - 1x U7-Pro
@@ -17,51 +19,54 @@ a lot of prosumers are excited with Ubiquiti ecosystem (I myself am a big fan) i
 - 2x U6 Pro
 
 #### How many IoT devices?
-while I perform this investigation, the ones active are:
-- 60+ devices at 2.4Ghz
-- 20 or so devices at 5Ghz
-a good balance of these are homed balanced on both U7Pros and U6Pros
+while I perform this investigation, the ones active are 70+ devices on a 2.4Ghz SSID with *Enhanced IoT Connectivity Mode* Enabled, a good balance of these are homed on both U7-Pros and U6-Pros
+
+These devices are a good mix of:
+- Kasa smart light switches (HS210, KS200M), smart light dimmers (HS220, KS230, KS220M), smart plugs (HS103, KP303), light strip (KL400L5)
+- Wiz bulbs (123140, 23011, 27281)
+- Ring cameras and doorbell (non-Pro models)
+- Samsung appliances
+- Raspberry Pi Zero W
+- Arduino boards ESP32 based and WiFiNina based
 
 ### Test Plan
-1. flash the Arduino code (setting Core Debug Level to Debug) on to an ESP32 board
-2. physically connect to a machine with serial monitor, then observe
-3. detach from serial monitor (effectively disconnecting power)
-4. let it be for ~10 seconds
-5. then reconnect, effectively viewing it again on serial monitior
-6. repeat at least 5 times regardless if it connects or not
+1. Flash the Arduino code setting Core Debug Level (Debug) and CPU Frequency (80Ghz) on to an ESP32 board
+2. Physically connect to a machine with serial monitor while being feet away from Access Point. Observe
+3. Report output of serial monitor
 
 #### Test devices and software
 - an Espressif ESP32 board (mine is a SeeedStudio Xiao ESP32-C3)
-- Arduino code (included in this repo) and uploaded to board
-- arduino-esp32 board library
-- U7-Pro
-- U7-Pro-Wall
-- U6-Pro (used to compare)
+- Arduino code (included in this repo) and arduino-esp32 board library
+- U7-Pro (7.0.76)
+- U7-Pro-Wall (7.0.76)
+- U6-Pro (6.6.77 used to compare)
+- UDM-Pro (UniFi OS 4.1.5)
+- Network (8.6.3)
 
 #### Test Plan A
-- U7-Pro on firmware 7.0.66
+- U7-Pro with firmware 7.0.76 and Enhanced IoT Connectivity Mode (Enabled)
 - observe serial monitor while a few feet away from a U7-Pro
 
-Result: got connected *three out of 5 times*
+Result:
 
 #### Test Plan B
-- U7-Pro-wall downgraded to fimware 7.0.56
+- U7-Pro-wall with fimware 7.0.76 and Enhanced IoT Connectivity Mode (Enabled)
 - observe serial monitor while a few feet away from a U7-Pro-Wall
 
-Result: got connected *one out of 5 times*
+Result: 
 
 #### Test Plan C
-- U6-Pro with (latest) firmware 6.6.77
+- U6-Pro with firmware 6.6.77 and Enhanced IoT Connectivity Mode (Enabled)
 - observe serial monitor while just a few feet away from a U6-Pro
 
-Result: connected immedidately and consistently, *five out of 5 times*
+Result: 
 
 ### Images
 
 Simple Test results
-![TestA](images/test-case-A.png?raw=true "U7 Pro test")
-![TestB](images/test-case-B.png?raw=true "U7 Pro-Wall test")
-![TestC](images/test-case-C.png?raw=true "U6 Pro test")
+![TestA](results/esp32-to-u7pro.log?raw=true "U7 Pro test")
+![TestB](results/esp32-to-u7prowall.log?raw=true "U7 Pro-Wall test")
+![TestC](results/esp32-to-u6pro.log?raw=true "U6 Pro test")
 
 Hardware
 ![board](images/esp32.JPG?raw=true "ESP32 board")

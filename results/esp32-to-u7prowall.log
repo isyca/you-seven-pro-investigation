@@ -1,77 +1,694 @@
-=========== Before Setup Start ===========
-Chip Info:
-------------------------------------------
-  Model             : ESP32-C3
-  Package           : 0
-  Revision          : 0.03
-  Cores             : 1
-  CPU Frequency     : 160 MHz
-  XTAL Frequency    : 40 MHz
-  Features Bitfield : 0x00000012
-  Embedded Flash    : No
-  Embedded PSRAM    : No
-  2.4GHz WiFi       : Yes
-  Classic BT        : No
-  BT Low Energy     : Yes
-  IEEE 802.15.4     : No
-------------------------------------------
-INTERNAL Memory Info:
-------------------------------------------
-  Total Size        :   308872 B ( 301.6 KB)
-  Free Bytes        :   278452 B ( 271.9 KB)
-  Allocated Bytes   :    26516 B (  25.9 KB)
-  Minimum Free Bytes:   278452 B ( 271.9 KB)
-  Largest Free Block:   139252 B ( 136.0 KB)
-------------------------------------------
-Flash Info:
-------------------------------------------
-  Chip Size         :  4194304 B (4 MB)
-  Block Size        :    65536 B (  64.0 KB)
-  Sector Size       :     4096 B (   4.0 KB)
-  Page Size         :      256 B (   0.2 KB)
-  Bus Speed         : 80 MHz
-  Bus Mode          : QIO
-------------------------------------------
-Partitions Info:
-------------------------------------------
-                nvs : addr: 0x00009000, size:    20.0 KB, type: DATA, subtype: NVS
-            otadata : addr: 0x0000E000, size:     8.0 KB, type: DATA, subtype: OTA
-               app0 : addr: 0x00010000, size:  1280.0 KB, type:  APP, subtype: OTA_0
-               app1 : addr: 0x00150000, size:  1280.0 KB, type:  APP, subtype: OTA_1
-             spiffs : addr: 0x00290000, size:  1408.0 KB, type: DATA, subtype: SPIFFS
-           coredump : addr: 0x003F0000, size:    64.0 KB, type: DATA, subtype: COREDUMP
-------------------------------------------
-Software Info:
-------------------------------------------
-  Compile Date/Time : Oct 16 2024 19:08:24
-  Compile Host OS   : macosx
-  ESP-IDF Version   : v5.1.4-828-g33fbade6b8-dirty
-  Arduino Version   : 3.0.5
-------------------------------------------
-Board Info:
-------------------------------------------
-  Arduino Board     : XIAO_ESP32C3
-  Arduino Variant   : XIAO_ESP32C3
-  Arduino FQBN      : esp32:esp32:XIAO_ESP32C3:CDCOnBoot=default,PartitionScheme=default,CPUFreq=160,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=115200,DebugLevel=verbose,EraseFlash=none
-============ Before Setup End ============
-[   449][I][you-seven-pro-24-investigation.ino:31] setup(): [you-seven-pro-24-investigation] First WiFI connect at setup.
-[  5458][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 9 - WIFI_READY
-[  5495][V][STA.cpp:184] _onStaEvent(): STA Started
-[  5496][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 11 - STA_START
-[  5496][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 11 - STA_START
-[  5571][V][STA.cpp:214] _onStaEvent(): STA Disconnected: SSID: myiotSSID, BSSID: b2:8b:a9:31:47:fa, Reason: 202
-[  5572][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 14 - STA_DISCONNECTED
-[  5573][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 14 - STA_DISCONNECTED
-[  5573][W][STA.cpp:135] _onStaArduinoEvent(): Reason: 202 - AUTH_FAIL
-[  5573][D][STA.cpp:153] _onStaArduinoEvent(): WiFi Reconnect Running
-[  5574][W][STA.cpp:537] disconnect(): STA already disconnected.
-[  5657][V][STA.cpp:214] _onStaEvent(): STA Disconnected: SSID: myiotSSID, BSSID: b2:8b:a9:31:47:fa, Reason: 202
-[  5658][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 14 - STA_DISCONNECTED
-[  5658][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 14 - STA_DISCONNECTED
-[  5659][W][STA.cpp:135] _onStaArduinoEvent(): Reason: 202 - AUTH_FAIL
-[ 10498][I][you-seven-pro-24-investigation.ino:24] connectWifi(): [you-seven-pro-24-investigation] WiFi connecting.
-[ 15498][I][you-seven-pro-24-investigation.ino:24] connectWifi(): [you-seven-pro-24-investigation] WiFi connecting.
-[ 20498][I][you-seven-pro-24-investigation.ino:24] connectWifi(): [you-seven-pro-24-investigation] WiFi connecting.
-[ 25498][I][you-seven-pro-24-investigation.ino:24] connectWifi(): [you-seven-pro-24-investigation] WiFi connecting.
-[ 30498][I][you-seven-pro-24-investigation.ino:24] connectWifi(): [you-seven-pro-24-investigation] WiFi connecting.
-[ 35498][I][you-seven-pro-24-investigation.ino:24] connectWifi(): [you-seven-pro-24-investigation] WiFi connecting.
+20:46:59.811 -> [   173][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Dein=========== Before Setup Start ===========
+20:46:59.811 -> Chip Info:
+20:46:59.811 -> ------------------------------------------
+20:46:59.811 ->   Model             : ESP32-C3
+20:46:59.811 ->   Package           : 0
+20:46:59.811 ->   Revision          : 0.03
+20:46:59.811 ->   Cores             : 1
+20:46:59.811 ->   CPU Frequency     : 80 MHz
+20:46:59.811 ->   XTAL Frequency    : 40 MHz
+20:46:59.811 ->   Features Bitfield : 0x00000012
+20:46:59.811 ->   Embedded Flash    : No
+20:46:59.811 ->   Embedded PSRAM    : No
+20:46:59.811 ->   2.4GHz WiFi       : Yes
+20:46:59.811 ->   Classic BT        : No
+20:46:59.811 ->   BT Low Energy     : Yes
+20:46:59.811 ->   IEEE 802.15.4     : No
+20:46:59.811 -> ------------------------------------------
+20:46:59.811 -> INTERNAL Memory Info:
+20:46:59.811 -> ------------------------------------------
+20:46:59.811 ->   Total Size        :   308888 B ( 301.6 KB)
+20:46:59.811 ->   Free Bytes        :   283304 B ( 276.7 KB)
+20:46:59.811 ->   Allocated Bytes   :    21696 B (  21.2 KB)
+20:46:59.811 ->   Minimum Free Bytes:   278324 B ( 271.8 KB)
+20:46:59.811 ->   Largest Free Block:   139252 B ( 136.0 KB)
+20:46:59.811 -> ------------------------------------------
+20:46:59.811 -> Flash Info:
+20:46:59.811 -> ------------------------------------------
+20:46:59.811 ->   Chip Size         :  4194304 B (4 MB)
+20:46:59.811 ->   Block Size        :    65536 B (  64.0 KB)
+20:46:59.811 ->   Sector Size       :     4096 B (   4.0 KB)
+20:46:59.811 ->   Page Size         :      256 B (   0.2 KB)
+20:46:59.811 ->   Bus Speed         : 80 MHz
+20:46:59.811 ->   Bus Mode          : QIO
+20:46:59.811 -> ------------------------------------------
+20:46:59.811 -> Partitions Info:
+20:46:59.811 -> ------------------------------------------
+20:46:59.811 ->                 nvs : addr: 0x00009000, size:    20.0 KB, type: DATA, subtype: NVS
+20:46:59.811 ->             otadata : addr: 0x0000E000, size:     8.0 KB, type: DATA, subtype: OTA
+20:46:59.811 ->                app0 : addr: 0x00010000, size:  1280.0 KB, type:  APP, subtype: OTA_0
+20:46:59.811 ->                app1 : addr: 0x00150000, size:  1280.0 KB, type:  APP, subtype: OTA_1
+20:46:59.811 ->              spiffs : addr: 0x00290000, size:  1408.0 KB, type: DATA, subtype: SPIFFS
+20:46:59.811 ->            coredump : addr: 0x003F0000, size:    64.0 KB, type: DATA, subtype: COREDUMP
+20:46:59.811 -> ------------------------------------------
+20:46:59.811 -> Software Info:
+20:46:59.811 -> ------------------------------------------
+20:46:59.811 ->   Compile Date/Time : Oct 22 2024 20:32:06
+20:46:59.811 ->   Compile Host OS   : macosx
+20:46:59.811 ->   ESP-IDF Version   : v5.1.4-828-g33fbade6b8-dirty
+20:46:59.811 ->   Arduino Version   : 3.0.5
+20:46:59.811 -> ------------------------------------------
+20:46:59.811 -> Board Info:
+20:46:59.811 -> ------------------------------------------
+20:46:59.811 ->   Arduino Board     : XIAO_ESP32C3
+20:46:59.811 ->   Arduino Variant   : XIAO_ESP32C3
+20:46:59.811 ->   Arduino FQBN      : esp32:esp32:XIAO_ESP32C3:CDCOnBoot=default,PartitionScheme=default,CPUFreq=80,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=115200,DebugLevel=verbose,EraseFlash=none
+20:46:59.811 -> ============ Before Setup End ============
+20:46:59.899 -> [   480][I][you-seven-pro-24-investigation.ino:33] setup(): [you-seven-pro-24-investigation] First WiFI connect at setup.
+20:46:59.936 -> [   494][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 9 - WIFI_READY
+20:46:59.971 -> [   539][V][STA.cpp:184] _onStaEvent(): STA Started
+20:46:59.971 -> [   540][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 11 - STA_START
+20:46:59.971 -> [   541][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 11 - STA_START
+20:47:00.042 -> [   621][V][STA.cpp:204] _onStaEvent(): STA Connected: SSID: iotmymymy, BSSID: a6:05:d6:6a:be:74, Channel: 6, Auth: WPA2_PSK
+20:47:00.042 -> [   622][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 13 - STA_CONNECTED
+20:47:00.042 -> [   623][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 13 - STA_CONNECTED
+20:47:00.559 -> [  1133][V][NetworkInterface.cpp:78] _onIpEvent(): sta Got New IP: 172.16.108.61 MASK: 255.255.0.0 GW: 172.16.0.1
+20:47:00.559 -> [  1135][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 16 - STA_GOT_IP
+20:47:00.559 -> [  1136][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 16 - STA_GOT_IP
+20:47:00.559 -> [  1137][V][STA.cpp:169] _onStaArduinoEvent(): STA IP: 172.16.108.61, MASK: 255.255.0.0, GW: 172.16.0.1
+20:47:09.991 -> [ 10544][I][you-seven-pro-24-investigation.ino:29] connectWifi(): [you-seven-pro-24-investigation] Wifi Connected
+20:47:09.991 -> =========== After Setup Start ============
+20:47:09.991 -> INTERNAL Memory Info:
+20:47:09.991 -> ------------------------------------------
+20:47:09.991 ->   Total Size        :   308888 B ( 301.6 KB)
+20:47:09.991 ->   Free Bytes        :   226340 B ( 221.0 KB)
+20:47:09.991 ->   Allocated Bytes   :    75892 B (  74.1 KB)
+20:47:09.991 ->   Minimum Free Bytes:   211868 B ( 206.9 KB)
+20:47:09.991 ->   Largest Free Block:   114676 B ( 112.0 KB)
+20:47:09.991 -> ------------------------------------------
+20:47:09.991 -> GPIO Info:
+20:47:09.991 -> ------------------------------------------
+20:47:09.991 ->   GPIO : BUS_TYPE[bus/unit][chan]
+20:47:09.991 ->   --------------------------------------  
+20:47:09.991 ->     18 : USB_DM
+20:47:09.991 ->     19 : USB_DP
+20:47:09.991 ->     20 : UART_RX[0]
+20:47:09.991 ->     21 : UART_TX[0]
+20:47:09.991 -> ============ After Setup End =============
+20:47:10.026 -> [ 10576][W][you-seven-pro-24-investigation.ino:39] loop(): [you-seven-pro-24-investigation] WiFi Connected. Board paused, awaiting restart.
+20:47:40.012 -> [ 40582][V][STA.cpp:214] _onStaEvent(): STA Disconnected: SSID: iotmymymy, BSSID: a6:05:d6:6a:be:74, Reason: 8
+20:47:40.012 -> [ 40584][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 14 - STA_DISCONNECTED
+20:47:40.012 -> [ 40585][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 14 - STA_DISCONNECTED
+20:47:40.012 -> [ 40585][W][STA.cpp:135] _onStaArduinoEvent(): Reason: 8 - ASSOC_LEAVE
+20:47:40.012 -> [ 40586][V][STA.cpp:188] _onStaEvent(): STA Stopped
+20:47:40.012 -> [ 40587][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 12 - STA_STOP
+20:47:40.012 -> [ 40588][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 12 - STA_STOP
+20:47:40.046 -> ESP-ROM:esp32c3-api1-20210207
+20:47:40.046 -> Build:Feb  7 2021
+20:47:40.046 -> rst:0x3 (RTC_SW_SYS_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+20:47:40.046 -> Saved PC:0x40048b82
+20:47:40.046 -> SPIWP:0xee
+20:47:40.046 -> mode:DIO, clock div:1
+20:47:40.046 -> load:0x3fcd5820,len:0x1058
+20:47:40.046 -> load:0x403cc710,len:0x8a8
+20:47:40.046 -> load:0x403ce710,len:0x2fac
+20:47:40.046 -> entry 0x403cc710
+20:47:40.231 -> [   173][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type USB_DM (38) successfully set to 0x42009ad2
+20:47:40.231 -> [   184][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type USB_DP (39) successfully set to 0x42009ad2
+20:47:40.231 -> [   196][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RX (2) successfully set to 0x420092d0
+20:47:40.266 -> [   207][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_TX (3) successfully set to 0x42009294
+20:47:40.266 -> [   218][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_CTS (4) successfully set to 0x42009258
+20:47:40.266 -> [   230][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RTS (5) successfully set to 0x4200921c
+20:47:40.301 -> [   241][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RX (2) successfully set to 0x420092d0
+20:47:40.301 -> [   252][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_TX (3) successfully set to 0x42009294
+20:47:40.301 -> [   264][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_CTS (4) successfully set to 0x42009258
+20:47:40.339 -> [   275][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RTS (5) successfully set to 0x4200921c
+20:47:40.339 -> [   288][D][esp32-hal-cpu.c:271] setCpuFrequencyMhz(): PLL: 480 / 6 = 80 Mhz, APB: 80000000 Hz
+20:47:40.339 -> [   308][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 20 successfully set to type UART_RX (2) with bus 0x3fc8d6ec
+20:47:40.373 -> [   319][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 21 successfully set to type UART_TX (3) with bus 0x3fc8d6ec
+20:47:40.373 -> [   330][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 18 successfully set to type USB_DM (38) with bus 0x3fc90b68
+20:47:40.373 -> [   341][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 19 successfully set to type USB_DP (39) with bus 0x3fc90b68
+20:47:40.411 -> =========== Before Setup Start ===========
+20:47:40.411 -> Chip Info:
+20:47:40.411 -> ------------------------------------------
+20:47:40.411 ->   Model             : ESP32-C3
+20:47:40.411 ->   Package           : 0
+20:47:40.411 ->   Revision          : 0.03
+20:47:40.411 ->   Cores             : 1
+20:47:40.411 ->   CPU Frequency     : 80 MHz
+20:47:40.411 ->   XTAL Frequency    : 40 MHz
+20:47:40.411 ->   Features Bitfield : 0x00000012
+20:47:40.411 ->   Embedded Flash    : No
+20:47:40.411 ->   Embedded PSRAM    : No
+20:47:40.411 ->   2.4GHz WiFi       : Yes
+20:47:40.411 ->   Classic BT        : No
+20:47:40.411 ->   BT Low Energy     : Yes
+20:47:40.411 ->   IEEE 802.15.4     : No
+20:47:40.411 -> ------------------------------------------
+20:47:40.411 -> INTERNAL Memory Info:
+20:47:40.411 -> ------------------------------------------
+20:47:40.411 ->   Total Size        :   308888 B ( 301.6 KB)
+20:47:40.411 ->   Free Bytes        :   278324 B ( 271.8 KB)
+20:47:40.411 ->   Allocated Bytes   :    26644 B (  26.0 KB)
+20:47:40.411 ->   Minimum Free Bytes:   278324 B ( 271.8 KB)
+20:47:40.411 ->   Largest Free Block:   139252 B ( 136.0 KB)
+20:47:40.411 -> ------------------------------------------
+20:47:40.411 -> Flash Info:
+20:47:40.411 -> ------------------------------------------
+20:47:40.411 ->   Chip Size         :  4194304 B (4 MB)
+20:47:40.411 ->   Block Size        :    65536 B (  64.0 KB)
+20:47:40.411 ->   Sector Size       :     4096 B (   4.0 KB)
+20:47:40.411 ->   Page Size         :      256 B (   0.2 KB)
+20:47:40.411 ->   Bus Speed         : 80 MHz
+20:47:40.411 ->   Bus Mode          : QIO
+20:47:40.411 -> ------------------------------------------
+20:47:40.411 -> Partitions Info:
+20:47:40.411 -> ------------------------------------------
+20:47:40.411 ->                 nvs : addr: 0x00009000, size:    20.0 KB, type: DATA, subtype: NVS
+20:47:40.411 ->             otadata : addr: 0x0000E000, size:     8.0 KB, type: DATA, subtype: OTA
+20:47:40.411 ->                app0 : addr: 0x00010000, size:  1280.0 KB, type:  APP, subtype: OTA_0
+20:47:40.411 ->                app1 : addr: 0x00150000, size:  1280.0 KB, type:  APP, subtype: OTA_1
+20:47:40.411 ->              spiffs : addr: 0x00290000, size:  1408.0 KB, type: DATA, subtype: SPIFFS
+20:47:40.411 ->            coredump : addr: 0x003F0000, size:    64.0 KB, type: DATA, subtype: COREDUMP
+20:47:40.411 -> ------------------------------------------
+20:47:40.411 -> Software Info:
+20:47:40.411 -> ------------------------------------------
+20:47:40.411 ->   Compile Date/Time : Oct 22 2024 20:32:06
+20:47:40.411 ->   Compile Host OS   : macosx
+20:47:40.411 ->   ESP-IDF Version   : v5.1.4-828-g33fbade6b8-dirty
+20:47:40.411 ->   Arduino Version   : 3.0.5
+20:47:40.411 -> ------------------------------------------
+20:47:40.411 -> Board Info:
+20:47:40.411 -> ------------------------------------------
+20:47:40.411 ->   Arduino Board     : XIAO_ESP32C3
+20:47:40.411 ->   Arduino Variant   : XIAO_ESP32C3
+20:47:40.411 ->   Arduino FQBN      : esp32:esp32:XIAO_ESP32C3:CDCOnBoot=default,PartitionScheme=default,CPUFreq=80,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=115200,DebugLevel=verbose,EraseFlash=none
+20:47:40.411 -> ============ Before Setup End ============
+20:47:40.519 -> [   475][I][you-seven-pro-24-investigation.ino:33] setup(): [you-seven-pro-24-investigation] First WiFI connect at setup.
+20:47:40.519 -> [   489][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 9 - WIFI_READY
+20:47:40.588 -> [   534][V][STA.cpp:184] _onStaEvent(): STA Started
+20:47:40.588 -> [   535][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 11 - STA_START
+20:47:40.588 -> [   536][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 11 - STA_START
+20:47:41.747 -> [  1695][V][STA.cpp:214] _onStaEvent(): STA Disconnected: SSID: iotmymymy, BSSID: a6:05:d6:6a:be:74, Reason: 39
+20:47:41.747 -> [  1696][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 14 - STA_DISCONNECTED
+20:47:41.747 -> [  1697][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 14 - STA_DISCONNECTED
+20:47:41.747 -> [  1698][W][STA.cpp:135] _onStaArduinoEvent(): Reason: 39 - TIMEOUT
+20:47:41.747 -> [  1699][D][STA.cpp:153] _onStaArduinoEvent(): WiFi Reconnect Running
+20:47:41.747 -> [  1700][W][STA.cpp:537] disconnect(): STA already disconnected.
+20:47:41.854 -> [  1819][V][STA.cpp:204] _onStaEvent(): STA Connected: SSID: iotmymymy, BSSID: a6:05:d6:6a:be:74, Channel: 6, Auth: WPA2_PSK
+20:47:41.854 -> [  1821][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 13 - STA_CONNECTED
+20:47:41.854 -> [  1822][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 13 - STA_CONNECTED
+20:47:42.384 -> [  2346][V][NetworkInterface.cpp:78] _onIpEvent(): sta Got New IP: 172.16.108.61 MASK: 255.255.0.0 GW: 172.16.0.1
+20:47:42.384 -> [  2347][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 16 - STA_GOT_IP
+20:47:42.384 -> [  2348][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 16 - STA_GOT_IP
+20:47:42.384 -> [  2349][V][STA.cpp:169] _onStaArduinoEvent(): STA IP: 172.16.108.61, MASK: 255.255.0.0, GW: 172.16.0.1
+20:47:50.585 -> [ 10539][I][you-seven-pro-24-investigation.ino:29] connectWifi(): [you-seven-pro-24-investigation] Wifi Connected
+20:47:50.585 -> =========== After Setup Start ============
+20:47:50.585 -> INTERNAL Memory Info:
+20:47:50.585 -> ------------------------------------------
+20:47:50.585 ->   Total Size        :   308888 B ( 301.6 KB)
+20:47:50.585 ->   Free Bytes        :   226432 B ( 221.1 KB)
+20:47:50.585 ->   Allocated Bytes   :    75800 B (  74.0 KB)
+20:47:50.585 ->   Minimum Free Bytes:   214344 B ( 209.3 KB)
+20:47:50.585 ->   Largest Free Block:   114676 B ( 112.0 KB)
+20:47:50.585 -> ------------------------------------------
+20:47:50.585 -> GPIO Info:
+20:47:50.585 -> ------------------------------------------
+20:47:50.585 ->   GPIO : BUS_TYPE[bus/unit][chan]
+20:47:50.585 ->   --------------------------------------  
+20:47:50.585 ->     18 : USB_DM
+20:47:50.585 ->     19 : USB_DP
+20:47:50.585 ->     20 : UART_RX[0]
+20:47:50.585 ->     21 : UART_TX[0]
+20:47:50.585 -> ============ After Setup End =============
+20:47:50.621 -> [ 10572][W][you-seven-pro-24-investigation.ino:39] loop(): [you-seven-pro-24-investigation] WiFi Connected. Board paused, awaiting restart.
+20:48:20.620 -> [ 40578][V][STA.cpp:214] _onStaEvent(): STA Disconnected: SSID: iotmymymy, BSSID: a6:05:d6:6a:be:74, Reason: 8
+20:48:20.620 -> [ 40580][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 14 - STA_DISCONNECTED
+20:48:20.620 -> [ 40581][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 14 - STA_DISCONNECTED
+20:48:20.620 -> [ 40582][W][STA.cpp:135] _onStaArduinoEvent(): Reason: 8 - ASSOC_LEAVE
+20:48:20.620 -> [ 40583][V][STA.cpp:188] _onStaEvent(): STA Stopped
+20:48:20.620 -> [ 40583][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 12 - STA_STOP
+20:48:20.620 -> [ 40584][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 12 - STA_STOP
+20:48:20.655 -> ESP-ROM:esp32c3-api1-20210207
+20:48:20.655 -> Build:Feb  7 2021
+20:48:20.655 -> rst:0x3 (RTC_SW_SYS_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+20:48:20.655 -> Saved PC:0x40048b82
+20:48:20.655 -> SPIWP:0xee
+20:48:20.655 -> mode:DIO, clock div:1
+20:48:20.655 -> load:0x3fcd5820,len:0x1058
+20:48:20.655 -> load:0x403cc710,len:0x8a8
+20:48:20.655 -> load:0x403ce710,len:0x2fac
+20:48:20.655 -> entry 0x403cc710
+20:48:20.845 -> [   173][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type USB_DM (38) successfully set to 0x42009ad2
+20:48:20.845 -> [   184][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type USB_DP (39) successfully set to 0x42009ad2
+20:48:20.845 -> [   196][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RX (2) successfully set to 0x420092d0
+20:48:20.845 -> [   207][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_TX (3) successfully set to 0x42009294
+20:48:20.878 -> [   218][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_CTS (4) successfully set to 0x42009258
+20:48:20.878 -> [   230][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RTS (5) successfully set to 0x4200921c
+20:48:20.878 -> [   241][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RX (2) successfully set to 0x420092d0
+20:48:20.913 -> [   252][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_TX (3) successfully set to 0x42009294
+20:48:20.913 -> [   264][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_CTS (4) successfully set to 0x42009258
+20:48:20.913 -> [   275][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RTS (5) successfully set to 0x4200921c
+20:48:20.950 -> [   288][D][esp32-hal-cpu.c:271] setCpuFrequencyMhz(): PLL: 480 / 6 = 80 Mhz, APB: 80000000 Hz
+20:48:20.950 -> [   308][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 20 successfully set to type UART_RX (2) with bus 0x3fc8d6ec
+20:48:20.985 -> [   319][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 21 successfully set to type UART_TX (3) with bus 0x3fc8d6ec
+20:48:20.985 -> [   330][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 18 successfully set to type USB_DM (38) with bus 0x3fc90b68
+20:48:20.985 -> [   341][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 19 successfully set to type USB_DP (39) with bus 0x3fc90b68
+20:48:21.022 -> =========== Before Setup Start ===========
+20:48:21.022 -> Chip Info:
+20:48:21.022 -> ------------------------------------------
+20:48:21.022 ->   Model             : ESP32-C3
+20:48:21.022 ->   Package           : 0
+20:48:21.022 ->   Revision          : 0.03
+20:48:21.022 ->   Cores             : 1
+20:48:21.022 ->   CPU Frequency     : 80 MHz
+20:48:21.022 ->   XTAL Frequency    : 40 MHz
+20:48:21.022 ->   Features Bitfield : 0x00000012
+20:48:21.022 ->   Embedded Flash    : No
+20:48:21.022 ->   Embedded PSRAM    : No
+20:48:21.022 ->   2.4GHz WiFi       : Yes
+20:48:21.022 ->   Classic BT        : No
+20:48:21.022 ->   BT Low Energy     : Yes
+20:48:21.022 ->   IEEE 802.15.4     : No
+20:48:21.022 -> ------------------------------------------
+20:48:21.022 -> INTERNAL Memory Info:
+20:48:21.022 -> ------------------------------------------
+20:48:21.022 ->   Total Size        :   308888 B ( 301.6 KB)
+20:48:21.022 ->   Free Bytes        :   278324 B ( 271.8 KB)
+20:48:21.022 ->   Allocated Bytes   :    26644 B (  26.0 KB)
+20:48:21.022 ->   Minimum Free Bytes:   278324 B ( 271.8 KB)
+20:48:21.022 ->   Largest Free Block:   139252 B ( 136.0 KB)
+20:48:21.022 -> ------------------------------------------
+20:48:21.022 -> Flash Info:
+20:48:21.022 -> ------------------------------------------
+20:48:21.022 ->   Chip Size         :  4194304 B (4 MB)
+20:48:21.022 ->   Block Size        :    65536 B (  64.0 KB)
+20:48:21.022 ->   Sector Size       :     4096 B (   4.0 KB)
+20:48:21.022 ->   Page Size         :      256 B (   0.2 KB)
+20:48:21.022 ->   Bus Speed         : 80 MHz
+20:48:21.022 ->   Bus Mode          : QIO
+20:48:21.022 -> ------------------------------------------
+20:48:21.022 -> Partitions Info:
+20:48:21.022 -> ------------------------------------------
+20:48:21.022 ->                 nvs : addr: 0x00009000, size:    20.0 KB, type: DATA, subtype: NVS
+20:48:21.022 ->             otadata : addr: 0x0000E000, size:     8.0 KB, type: DATA, subtype: OTA
+20:48:21.022 ->                app0 : addr: 0x00010000, size:  1280.0 KB, type:  APP, subtype: OTA_0
+20:48:21.022 ->                app1 : addr: 0x00150000, size:  1280.0 KB, type:  APP, subtype: OTA_1
+20:48:21.022 ->              spiffs : addr: 0x00290000, size:  1408.0 KB, type: DATA, subtype: SPIFFS
+20:48:21.022 ->            coredump : addr: 0x003F0000, size:    64.0 KB, type: DATA, subtype: COREDUMP
+20:48:21.022 -> ------------------------------------------
+20:48:21.022 -> Software Info:
+20:48:21.022 -> ------------------------------------------
+20:48:21.022 ->   Compile Date/Time : Oct 22 2024 20:32:06
+20:48:21.022 ->   Compile Host OS   : macosx
+20:48:21.022 ->   ESP-IDF Version   : v5.1.4-828-g33fbade6b8-dirty
+20:48:21.022 ->   Arduino Version   : 3.0.5
+20:48:21.022 -> ------------------------------------------
+20:48:21.022 -> Board Info:
+20:48:21.022 -> ------------------------------------------
+20:48:21.022 ->   Arduino Board     : XIAO_ESP32C3
+20:48:21.022 ->   Arduino Variant   : XIAO_ESP32C3
+20:48:21.022 ->   Arduino FQBN      : esp32:esp32:XIAO_ESP32C3:CDCOnBoot=default,PartitionScheme=default,CPUFreq=80,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=115200,DebugLevel=verbose,EraseFlash=none
+20:48:21.022 -> ============ Before Setup End ============
+20:48:21.126 -> [   474][I][you-seven-pro-24-investigation.ino:33] setup(): [you-seven-pro-24-investigation] First WiFI connect at setup.
+20:48:21.126 -> [   488][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 9 - WIFI_READY
+20:48:21.197 -> [   534][V][STA.cpp:184] _onStaEvent(): STA Started
+20:48:21.197 -> [   534][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 11 - STA_START
+20:48:21.197 -> [   535][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 11 - STA_START
+20:48:21.307 -> [   646][V][STA.cpp:204] _onStaEvent(): STA Connected: SSID: iotmymymy, BSSID: a6:05:d6:6a:be:74, Channel: 6, Auth: WPA2_PSK
+20:48:21.307 -> [   648][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 13 - STA_CONNECTED
+20:48:21.307 -> [   649][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 13 - STA_CONNECTED
+20:48:21.378 -> [   709][V][NetworkInterface.cpp:78] _onIpEvent(): sta Got New IP: 172.16.108.61 MASK: 255.255.0.0 GW: 172.16.0.1
+20:48:21.378 -> [   711][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 16 - STA_GOT_IP
+20:48:21.378 -> [   712][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 16 - STA_GOT_IP
+20:48:21.378 -> [   713][V][STA.cpp:169] _onStaArduinoEvent(): STA IP: 172.16.108.61, MASK: 255.255.0.0, GW: 172.16.0.1
+20:48:31.195 -> [ 10539][I][you-seven-pro-24-investigation.ino:29] connectWifi(): [you-seven-pro-24-investigation] Wifi Connected
+20:48:31.195 -> =========== After Setup Start ============
+20:48:31.195 -> INTERNAL Memory Info:
+20:48:31.195 -> ------------------------------------------
+20:48:31.195 ->   Total Size        :   308888 B ( 301.6 KB)
+20:48:31.195 ->   Free Bytes        :   226360 B ( 221.1 KB)
+20:48:31.195 ->   Allocated Bytes   :    75872 B (  74.1 KB)
+20:48:31.195 ->   Minimum Free Bytes:   214292 B ( 209.3 KB)
+20:48:31.195 ->   Largest Free Block:   114676 B ( 112.0 KB)
+20:48:31.195 -> ------------------------------------------
+20:48:31.195 -> GPIO Info:
+20:48:31.195 -> ------------------------------------------
+20:48:31.195 ->   GPIO : BUS_TYPE[bus/unit][chan]
+20:48:31.195 ->   --------------------------------------  
+20:48:31.195 ->     18 : USB_DM
+20:48:31.195 ->     19 : USB_DP
+20:48:31.195 ->     20 : UART_RX[0]
+20:48:31.195 ->     21 : UART_TX[0]
+20:48:31.195 -> ============ After Setup End =============
+20:48:31.232 -> [ 10572][W][you-seven-pro-24-investigation.ino:39] loop(): [you-seven-pro-24-investigation] WiFi Connected. Board paused, awaiting restart.
+20:49:01.241 -> [ 40578][V][STA.cpp:214] _onStaEvent(): STA Disconnected: SSID: iotmymymy, BSSID: a6:05:d6:6a:be:74, Reason: 8
+20:49:01.241 -> [ 40580][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 14 - STA_DISCONNECTED
+20:49:01.241 -> [ 40581][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 14 - STA_DISCONNECTED
+20:49:01.241 -> [ 40582][W][STA.cpp:135] _onStaArduinoEvent(): Reason: 8 - ASSOC_LEAVE
+20:49:01.241 -> [ 40583][V][STA.cpp:188] _onStaEvent(): STA Stopped
+20:49:01.241 -> [ 40583][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 12 - STA_STOP
+20:49:01.241 -> [ 40584][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 12 - STA_STOP
+20:49:01.279 -> ESP-ROM:esp32c3-api1-20210207
+20:49:01.279 -> Build:Feb  7 2021
+20:49:01.279 -> rst:0x3 (RTC_SW_SYS_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+20:49:01.279 -> Saved PC:0x40048b82
+20:49:01.279 -> SPIWP:0xee
+20:49:01.279 -> mode:DIO, clock div:1
+20:49:01.279 -> load:0x3fcd5820,len:0x1058
+20:49:01.279 -> load:0x403cc710,len:0x8a8
+20:49:01.279 -> load:0x403ce710,len:0x2fac
+20:49:01.279 -> entry 0x403cc710
+20:49:01.421 -> [   173][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type USB_DM (38) successfully set to 0x42009ad2
+20:49:01.459 -> [   184][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type USB_DP (39) successfully set to 0x42009ad2
+20:49:01.459 -> [   196][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RX (2) successfully set to 0x420092d0
+20:49:01.459 -> [   207][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_TX (3) successfully set to 0x42009294
+20:49:01.493 -> [   218][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_CTS (4) successfully set to 0x42009258
+20:49:01.493 -> [   230][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RTS (5) successfully set to 0x4200921c
+20:49:01.493 -> [   241][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RX (2) successfully set to 0x420092d0
+20:49:01.529 -> [   252][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_TX (3) successfully set to 0x42009294
+20:49:01.529 -> [   264][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_CTS (4) successfully set to 0x42009258
+20:49:01.529 -> [   275][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RTS (5) successfully set to 0x4200921c
+20:49:01.567 -> [   288][D][esp32-hal-cpu.c:271] setCpuFrequencyMhz(): PLL: 480 / 6 = 80 Mhz, APB: 80000000 Hz
+20:49:01.567 -> [   308][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 20 successfully set to type UART_RX (2) with bus 0x3fc8d6ec
+20:49:01.567 -> [   319][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 21 successfully set to type UART_TX (3) with bus 0x3fc8d6ec
+20:49:01.600 -> [   330][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 18 successfully set to type USB_DM (38) with bus 0x3fc90b68
+20:49:01.600 -> [   341][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 19 successfully set to type USB_DP (39) with bus 0x3fc90b68
+20:49:01.600 -> =========== Before Setup Start ===========
+20:49:01.600 -> Chip Info:
+20:49:01.600 -> ------------------------------------------
+20:49:01.600 ->   Model             : ESP32-C3
+20:49:01.600 ->   Package           : 0
+20:49:01.600 ->   Revision          : 0.03
+20:49:01.600 ->   Cores             : 1
+20:49:01.600 ->   CPU Frequency     : 80 MHz
+20:49:01.600 ->   XTAL Frequency    : 40 MHz
+20:49:01.600 ->   Features Bitfield : 0x00000012
+20:49:01.600 ->   Embedded Flash    : No
+20:49:01.600 ->   Embedded PSRAM    : No
+20:49:01.600 ->   2.4GHz WiFi       : Yes
+20:49:01.600 ->   Classic BT        : No
+20:49:01.600 ->   BT Low Energy     : Yes
+20:49:01.600 ->   IEEE 802.15.4     : No
+20:49:01.600 -> ------------------------------------------
+20:49:01.600 -> INTERNAL Memory Info:
+20:49:01.600 -> ------------------------------------------
+20:49:01.600 ->   Total Size        :   308888 B ( 301.6 KB)
+20:49:01.600 ->   Free Bytes        :   278324 B ( 271.8 KB)
+20:49:01.635 ->   Allocated Bytes   :    26644 B (  26.0 KB)
+20:49:01.635 ->   Minimum Free Bytes:   278324 B ( 271.8 KB)
+20:49:01.635 ->   Largest Free Block:   139252 B ( 136.0 KB)
+20:49:01.635 -> ------------------------------------------
+20:49:01.635 -> Flash Info:
+20:49:01.635 -> ------------------------------------------
+20:49:01.635 ->   Chip Size         :  4194304 B (4 MB)
+20:49:01.635 ->   Block Size        :    65536 B (  64.0 KB)
+20:49:01.635 ->   Sector Size       :     4096 B (   4.0 KB)
+20:49:01.635 ->   Page Size         :      256 B (   0.2 KB)
+20:49:01.635 ->   Bus Speed         : 80 MHz
+20:49:01.635 ->   Bus Mode          : QIO
+20:49:01.635 -> ------------------------------------------
+20:49:01.635 -> Partitions Info:
+20:49:01.635 -> ------------------------------------------
+20:49:01.635 ->                 nvs : addr: 0x00009000, size:    20.0 KB, type: DATA, subtype: NVS
+20:49:01.635 ->             otadata : addr: 0x0000E000, size:     8.0 KB, type: DATA, subtype: OTA
+20:49:01.635 ->                app0 : addr: 0x00010000, size:  1280.0 KB, type:  APP, subtype: OTA_0
+20:49:01.635 ->                app1 : addr: 0x00150000, size:  1280.0 KB, type:  APP, subtype: OTA_1
+20:49:01.635 ->              spiffs : addr: 0x00290000, size:  1408.0 KB, type: DATA, subtype: SPIFFS
+20:49:01.635 ->            coredump : addr: 0x003F0000, size:    64.0 KB, type: DATA, subtype: COREDUMP
+20:49:01.635 -> ------------------------------------------
+20:49:01.635 -> Software Info:
+20:49:01.635 -> ------------------------------------------
+20:49:01.635 ->   Compile Date/Time : Oct 22 2024 20:32:06
+20:49:01.635 ->   Compile Host OS   : macosx
+20:49:01.635 ->   ESP-IDF Version   : v5.1.4-828-g33fbade6b8-dirty
+20:49:01.635 ->   Arduino Version   : 3.0.5
+20:49:01.635 -> ------------------------------------------
+20:49:01.635 -> Board Info:
+20:49:01.635 -> ------------------------------------------
+20:49:01.635 ->   Arduino Board     : XIAO_ESP32C3
+20:49:01.635 ->   Arduino Variant   : XIAO_ESP32C3
+20:49:01.635 ->   Arduino FQBN      : esp32:esp32:XIAO_ESP32C3:CDCOnBoot=default,PartitionScheme=default,CPUFreq=80,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=115200,DebugLevel=verbose,EraseFlash=none
+20:49:01.635 -> ============ Before Setup End ============
+20:49:01.742 -> [   474][I][you-seven-pro-24-investigation.ino:33] setup(): [you-seven-pro-24-investigation] First WiFI connect at setup.
+20:49:01.742 -> [   488][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 9 - WIFI_READY
+20:49:01.810 -> [   536][V][STA.cpp:184] _onStaEvent(): STA Started
+20:49:01.810 -> [   537][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 11 - STA_START
+20:49:01.810 -> [   538][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 11 - STA_START
+20:49:01.992 -> [   737][V][STA.cpp:204] _onStaEvent(): STA Connected: SSID: iotmymymy, BSSID: a6:05:d6:6a:be:74, Channel: 6, Auth: WPA2_PSK
+20:49:01.992 -> [   738][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 13 - STA_CONNECTED
+20:49:01.992 -> [   739][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 13 - STA_CONNECTED
+20:49:02.062 -> [   783][V][NetworkInterface.cpp:78] _onIpEvent(): sta Got New IP: 172.16.108.61 MASK: 255.255.0.0 GW: 172.16.0.1
+20:49:02.062 -> [   786][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 16 - STA_GOT_IP
+20:49:02.062 -> [   786][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 16 - STA_GOT_IP
+20:49:02.062 -> [   788][V][STA.cpp:169] _onStaArduinoEvent(): STA IP: 172.16.108.61, MASK: 255.255.0.0, GW: 172.16.0.1
+20:49:11.817 -> [ 10541][I][you-seven-pro-24-investigation.ino:29] connectWifi(): [you-seven-pro-24-investigation] Wifi Connected
+20:49:11.817 -> =========== After Setup Start ============
+20:49:11.817 -> INTERNAL Memory Info:
+20:49:11.817 -> ------------------------------------------
+20:49:11.817 ->   Total Size        :   308888 B ( 301.6 KB)
+20:49:11.817 ->   Free Bytes        :   226352 B ( 221.0 KB)
+20:49:11.817 ->   Allocated Bytes   :    75880 B (  74.1 KB)
+20:49:11.817 ->   Minimum Free Bytes:   221224 B ( 216.0 KB)
+20:49:11.817 ->   Largest Free Block:   114676 B ( 112.0 KB)
+20:49:11.817 -> ------------------------------------------
+20:49:11.817 -> GPIO Info:
+20:49:11.817 -> ------------------------------------------
+20:49:11.817 ->   GPIO : BUS_TYPE[bus/unit][chan]
+20:49:11.817 ->   --------------------------------------  
+20:49:11.817 ->     18 : USB_DM
+20:49:11.817 ->     19 : USB_DP
+20:49:11.817 ->     20 : UART_RX[0]
+20:49:11.817 ->     21 : UART_TX[0]
+20:49:11.817 -> ============ After Setup End =============
+20:49:11.855 -> [ 10574][W][you-seven-pro-24-investigation.ino:39] loop(): [you-seven-pro-24-investigation] WiFi Connected. Board paused, awaiting restart.
+20:49:41.858 -> [ 40580][V][STA.cpp:214] _onStaEvent(): STA Disconnected: SSID: iotmymymy, BSSID: a6:05:d6:6a:be:74, Reason: 8
+20:49:41.858 -> [ 40582][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 14 - STA_DISCONNECTED
+20:49:41.858 -> [ 40583][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 14 - STA_DISCONNECTED
+20:49:41.858 -> [ 40584][W][STA.cpp:135] _onStaArduinoEvent(): Reason: 8 - ASSOC_LEAVE
+20:49:41.858 -> [ 40584][V][STA.cpp:188] _onStaEvent(): STA Stopped
+20:49:41.858 -> [ 40585][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 12 - STA_STOP
+20:49:41.858 -> [ 40586][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 12 - STA_STOP
+20:49:41.858 -> ESP-ROM:esp32c3-api1-20210207
+20:49:41.858 -> Build:Feb  7 2021
+20:49:41.858 -> rst:0x3 (RTC_SW_SYS_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+20:49:41.858 -> Saved PC:0x40048b82
+20:49:41.858 -> SPIWP:0xee
+20:49:41.858 -> mode:DIO, clock div:1
+20:49:41.858 -> load:0x3fcd5820,len:0x1058
+20:49:41.895 -> load:0x403cc710,len:0x8a8
+20:49:41.895 -> load:0x403ce710,len:0x2fac
+20:49:41.895 -> entry 0x403cc710
+20:49:42.042 -> [   173][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type USB_DM (38) successfully set to 0x42009ad2
+20:49:42.042 -> [   184][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type USB_DP (39) successfully set to 0x42009ad2
+20:49:42.080 -> [   196][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RX (2) successfully set to 0x420092d0
+20:49:42.080 -> [   207][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_TX (3) successfully set to 0x42009294
+20:49:42.080 -> [   218][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_CTS (4) successfully set to 0x42009258
+20:49:42.116 -> [   230][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RTS (5) successfully set to 0x4200921c
+20:49:42.116 -> [   241][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RX (2) successfully set to 0x420092d0
+20:49:42.116 -> [   252][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_TX (3) successfully set to 0x42009294
+20:49:42.116 -> [   264][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_CTS (4) successfully set to 0x42009258
+20:49:42.151 -> [   275][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RTS (5) successfully set to 0x4200921c
+20:49:42.151 -> [   288][D][esp32-hal-cpu.c:271] setCpuFrequencyMhz(): PLL: 480 / 6 = 80 Mhz, APB: 80000000 Hz
+20:49:42.188 -> [   308][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 20 successfully set to type UART_RX (2) with bus 0x3fc8d6ec
+20:49:42.188 -> [   319][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 21 successfully set to type UART_TX (3) with bus 0x3fc8d6ec
+20:49:42.188 -> [   330][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 18 successfully set to type USB_DM (38) with bus 0x3fc90b68
+20:49:42.226 -> [   341][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 19 successfully set to type USB_DP (39) with bus 0x3fc90b68
+20:49:42.226 -> =========== Before Setup Start ===========
+20:49:42.226 -> Chip Info:
+20:49:42.226 -> ------------------------------------------
+20:49:42.226 ->   Model             : ESP32-C3
+20:49:42.226 ->   Package           : 0
+20:49:42.226 ->   Revision          : 0.03
+20:49:42.226 ->   Cores             : 1
+20:49:42.226 ->   CPU Frequency     : 80 MHz
+20:49:42.226 ->   XTAL Frequency    : 40 MHz
+20:49:42.226 ->   Features Bitfield : 0x00000012
+20:49:42.226 ->   Embedded Flash    : No
+20:49:42.226 ->   Embedded PSRAM    : No
+20:49:42.226 ->   2.4GHz WiFi       : Yes
+20:49:42.226 ->   Classic BT        : No
+20:49:42.226 ->   BT Low Energy     : Yes
+20:49:42.226 ->   IEEE 802.15.4     : No
+20:49:42.226 -> ------------------------------------------
+20:49:42.226 -> INTERNAL Memory Info:
+20:49:42.226 -> ------------------------------------------
+20:49:42.226 ->   Total Size        :   308888 B ( 301.6 KB)
+20:49:42.226 ->   Free Bytes        :   278324 B ( 271.8 KB)
+20:49:42.226 ->   Allocated Bytes   :    26644 B (  26.0 KB)
+20:49:42.226 ->   Minimum Free Bytes:   278324 B ( 271.8 KB)
+20:49:42.226 ->   Largest Free Block:   139252 B ( 136.0 KB)
+20:49:42.226 -> ------------------------------------------
+20:49:42.226 -> Flash Info:
+20:49:42.226 -> ------------------------------------------
+20:49:42.226 ->   Chip Size         :  4194304 B (4 MB)
+20:49:42.226 ->   Block Size        :    65536 B (  64.0 KB)
+20:49:42.226 ->   Sector Size       :     4096 B (   4.0 KB)
+20:49:42.226 ->   Page Size         :      256 B (   0.2 KB)
+20:49:42.226 ->   Bus Speed         : 80 MHz
+20:49:42.226 ->   Bus Mode          : QIO
+20:49:42.226 -> ------------------------------------------
+20:49:42.226 -> Partitions Info:
+20:49:42.226 -> ------------------------------------------
+20:49:42.226 ->                 nvs : addr: 0x00009000, size:    20.0 KB, type: DATA, subtype: NVS
+20:49:42.226 ->             otadata : addr: 0x0000E000, size:     8.0 KB, type: DATA, subtype: OTA
+20:49:42.226 ->                app0 : addr: 0x00010000, size:  1280.0 KB, type:  APP, subtype: OTA_0
+20:49:42.226 ->                app1 : addr: 0x00150000, size:  1280.0 KB, type:  APP, subtype: OTA_1
+20:49:42.226 ->              spiffs : addr: 0x00290000, size:  1408.0 KB, type: DATA, subtype: SPIFFS
+20:49:42.226 ->            coredump : addr: 0x003F0000, size:    64.0 KB, type: DATA, subtype: COREDUMP
+20:49:42.226 -> ------------------------------------------
+20:49:42.226 -> Software Info:
+20:49:42.226 -> ------------------------------------------
+20:49:42.226 ->   Compile Date/Time : Oct 22 2024 20:32:06
+20:49:42.226 ->   Compile Host OS   : macosx
+20:49:42.226 ->   ESP-IDF Version   : v5.1.4-828-g33fbade6b8-dirty
+20:49:42.226 ->   Arduino Version   : 3.0.5
+20:49:42.226 -> ------------------------------------------
+20:49:42.226 -> Board Info:
+20:49:42.226 -> ------------------------------------------
+20:49:42.226 ->   Arduino Board     : XIAO_ESP32C3
+20:49:42.226 ->   Arduino Variant   : XIAO_ESP32C3
+20:49:42.226 ->   Arduino FQBN      : esp32:esp32:XIAO_ESP32C3:CDCOnBoot=default,PartitionScheme=default,CPUFreq=80,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=115200,DebugLevel=verbose,EraseFlash=none
+20:49:42.226 -> ============ Before Setup End ============
+20:49:42.333 -> [   475][I][you-seven-pro-24-investigation.ino:33] setup(): [you-seven-pro-24-investigation] First WiFI connect at setup.
+20:49:42.367 -> [   489][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 9 - WIFI_READY
+20:49:42.404 -> [   534][V][STA.cpp:184] _onStaEvent(): STA Started
+20:49:42.404 -> [   535][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 11 - STA_START
+20:49:42.404 -> [   536][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 11 - STA_START
+20:49:42.474 -> [   620][V][STA.cpp:204] _onStaEvent(): STA Connected: SSID: iotmymymy, BSSID: a6:05:d6:6a:be:74, Channel: 6, Auth: WPA2_PSK
+20:49:42.509 -> [   622][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 13 - STA_CONNECTED
+20:49:42.509 -> [   622][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 13 - STA_CONNECTED
+20:49:43.012 -> [  1147][V][NetworkInterface.cpp:78] _onIpEvent(): sta Got New IP: 172.16.108.61 MASK: 255.255.0.0 GW: 172.16.0.1
+20:49:43.012 -> [  1149][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 16 - STA_GOT_IP
+20:49:43.012 -> [  1150][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 16 - STA_GOT_IP
+20:49:43.012 -> [  1151][V][STA.cpp:169] _onStaArduinoEvent(): STA IP: 172.16.108.61, MASK: 255.255.0.0, GW: 172.16.0.1
+20:49:52.408 -> [ 10539][I][you-seven-pro-24-investigation.ino:29] connectWifi(): [you-seven-pro-24-investigation] Wifi Connected
+20:49:52.408 -> =========== After Setup Start ============
+20:49:52.408 -> INTERNAL Memory Info:
+20:49:52.408 -> ------------------------------------------
+20:49:52.408 ->   Total Size        :   308888 B ( 301.6 KB)
+20:49:52.408 ->   Free Bytes        :   226304 B ( 221.0 KB)
+20:49:52.408 ->   Allocated Bytes   :    75912 B (  74.1 KB)
+20:49:52.408 ->   Minimum Free Bytes:   216688 B ( 211.6 KB)
+20:49:52.408 ->   Largest Free Block:   114676 B ( 112.0 KB)
+20:49:52.408 -> ------------------------------------------
+20:49:52.408 -> GPIO Info:
+20:49:52.408 -> ------------------------------------------
+20:49:52.408 ->   GPIO : BUS_TYPE[bus/unit][chan]
+20:49:52.408 ->   --------------------------------------  
+20:49:52.408 ->     18 : USB_DM
+20:49:52.408 ->     19 : USB_DP
+20:49:52.408 ->     20 : UART_RX[0]
+20:49:52.408 ->     21 : UART_TX[0]
+20:49:52.408 -> ============ After Setup End =============
+20:49:52.442 -> [ 10571][W][you-seven-pro-24-investigation.ino:39] loop(): [you-seven-pro-24-investigation] WiFi Connected. Board paused, awaiting restart.
+20:50:22.457 -> [ 40577][V][STA.cpp:214] _onStaEvent(): STA Disconnected: SSID: iotmymymy, BSSID: a6:05:d6:6a:be:74, Reason: 8
+20:50:22.457 -> [ 40579][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 14 - STA_DISCONNECTED
+20:50:22.457 -> [ 40580][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 14 - STA_DISCONNECTED
+20:50:22.457 -> [ 40581][W][STA.cpp:135] _onStaArduinoEvent(): Reason: 8 - ASSOC_LEAVE
+20:50:22.457 -> [ 40581][V][STA.cpp:188] _onStaEvent(): STA Stopped
+20:50:22.457 -> [ 40582][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 12 - STA_STOP
+20:50:22.457 -> [ 40583][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 12 - STA_STOP
+20:50:22.457 -> ESP-ROM:esp32c3-api1-20210207
+20:50:22.457 -> Build:Feb  7 2021
+20:50:22.494 -> rst:0x3 (RTC_SW_SYS_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+20:50:22.494 -> Saved PC:0x40048b82
+20:50:22.494 -> SPIWP:0xee
+20:50:22.494 -> mode:DIO, clock div:1
+20:50:22.494 -> load:0x3fcd5820,len:0x1058
+20:50:22.494 -> load:0x403cc710,len:0x8a8
+20:50:22.494 -> load:0x403ce710,len:0x2fac
+20:50:22.494 -> entry 0x403cc710
+20:50:22.630 -> [   173][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type USB_DM (38) successfully set to 0x42009ad2
+20:50:22.668 -> [   184][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type USB_DP (39) successfully set to 0x42009ad2
+20:50:22.668 -> [   196][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RX (2) successfully set to 0x420092d0
+20:50:22.668 -> [   207][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_TX (3) successfully set to 0x42009294
+20:50:22.703 -> [   218][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_CTS (4) successfully set to 0x42009258
+20:50:22.703 -> [   230][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RTS (5) successfully set to 0x4200921c
+20:50:22.703 -> [   241][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RX (2) successfully set to 0x420092d0
+20:50:22.736 -> [   252][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_TX (3) successfully set to 0x42009294
+20:50:22.736 -> [   264][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_CTS (4) successfully set to 0x42009258
+20:50:22.736 -> [   275][V][esp32-hal-periman.c:235] perimanSetBusDeinit(): Deinit function for type UART_RTS (5) successfully set to 0x4200921c
+20:50:22.782 -> [   288][D][esp32-hal-cpu.c:271] setCpuFrequencyMhz(): PLL: 480 / 6 = 80 Mhz, APB: 80000000 Hz
+20:50:22.782 -> [   308][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 20 successfully set to type UART_RX (2) with bus 0x3fc8d6ec
+20:50:22.808 -> [   319][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 21 successfully set to type UART_TX (3) with bus 0x3fc8d6ec
+20:50:22.808 -> [   330][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 18 successfully set to type USB_DM (38) with bus 0x3fc90b68
+20:50:22.808 -> [   341][V][esp32-hal-periman.c:160] perimanSetPinBus(): Pin 19 successfully set to type USB_DP (39) with bus 0x3fc90b68
+20:50:22.841 -> =========== Before Setup Start ===========
+20:50:22.841 -> Chip Info:
+20:50:22.841 -> ------------------------------------------
+20:50:22.841 ->   Model             : ESP32-C3
+20:50:22.841 ->   Package           : 0
+20:50:22.841 ->   Revision          : 0.03
+20:50:22.841 ->   Cores             : 1
+20:50:22.841 ->   CPU Frequency     : 80 MHz
+20:50:22.841 ->   XTAL Frequency    : 40 MHz
+20:50:22.841 ->   Features Bitfield : 0x00000012
+20:50:22.841 ->   Embedded Flash    : No
+20:50:22.841 ->   Embedded PSRAM    : No
+20:50:22.841 ->   2.4GHz WiFi       : Yes
+20:50:22.841 ->   Classic BT        : No
+20:50:22.841 ->   BT Low Energy     : Yes
+20:50:22.841 ->   IEEE 802.15.4     : No
+20:50:22.841 -> ------------------------------------------
+20:50:22.841 -> INTERNAL Memory Info:
+20:50:22.841 -> ------------------------------------------
+20:50:22.841 ->   Total Size        :   308888 B ( 301.6 KB)
+20:50:22.841 ->   Free Bytes        :   278324 B ( 271.8 KB)
+20:50:22.841 ->   Allocated Bytes   :    26644 B (  26.0 KB)
+20:50:22.841 ->   Minimum Free Bytes:   278324 B ( 271.8 KB)
+20:50:22.841 ->   Largest Free Block:   139252 B ( 136.0 KB)
+20:50:22.841 -> ------------------------------------------
+20:50:22.841 -> Flash Info:
+20:50:22.841 -> ------------------------------------------
+20:50:22.841 ->   Chip Size         :  4194304 B (4 MB)
+20:50:22.841 ->   Block Size        :    65536 B (  64.0 KB)
+20:50:22.841 ->   Sector Size       :     4096 B (   4.0 KB)
+20:50:22.841 ->   Page Size         :      256 B (   0.2 KB)
+20:50:22.841 ->   Bus Speed         : 80 MHz
+20:50:22.841 ->   Bus Mode          : QIO
+20:50:22.841 -> ------------------------------------------
+20:50:22.841 -> Partitions Info:
+20:50:22.841 -> ------------------------------------------
+20:50:22.841 ->                 nvs : addr: 0x00009000, size:    20.0 KB, type: DATA, subtype: NVS
+20:50:22.841 ->             otadata : addr: 0x0000E000, size:     8.0 KB, type: DATA, subtype: OTA
+20:50:22.841 ->                app0 : addr: 0x00010000, size:  1280.0 KB, type:  APP, subtype: OTA_0
+20:50:22.841 ->                app1 : addr: 0x00150000, size:  1280.0 KB, type:  APP, subtype: OTA_1
+20:50:22.841 ->              spiffs : addr: 0x00290000, size:  1408.0 KB, type: DATA, subtype: SPIFFS
+20:50:22.841 ->            coredump : addr: 0x003F0000, size:    64.0 KB, type: DATA, subtype: COREDUMP
+20:50:22.841 -> ------------------------------------------
+20:50:22.841 -> Software Info:
+20:50:22.841 -> ------------------------------------------
+20:50:22.841 ->   Compile Date/Time : Oct 22 2024 20:32:06
+20:50:22.841 ->   Compile Host OS   : macosx
+20:50:22.841 ->   ESP-IDF Version   : v5.1.4-828-g33fbade6b8-dirty
+20:50:22.841 ->   Arduino Version   : 3.0.5
+20:50:22.841 -> ------------------------------------------
+20:50:22.841 -> Board Info:
+20:50:22.841 -> ------------------------------------------
+20:50:22.841 ->   Arduino Board     : XIAO_ESP32C3
+20:50:22.841 ->   Arduino Variant   : XIAO_ESP32C3
+20:50:22.841 ->   Arduino FQBN      : esp32:esp32:XIAO_ESP32C3:CDCOnBoot=default,PartitionScheme=default,CPUFreq=80,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=115200,DebugLevel=verbose,EraseFlash=none
+20:50:22.841 -> ============ Before Setup End ============
+20:50:22.945 -> [   474][I][you-seven-pro-24-investigation.ino:33] setup(): [you-seven-pro-24-investigation] First WiFI connect at setup.
+20:50:22.982 -> [   488][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 9 - WIFI_READY
+20:50:23.016 -> [   534][V][STA.cpp:184] _onStaEvent(): STA Started
+20:50:23.016 -> [   534][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 11 - STA_START
+20:50:23.016 -> [   535][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 11 - STA_START
+20:50:23.084 -> [   599][V][STA.cpp:204] _onStaEvent(): STA Connected: SSID: iotmymymy, BSSID: a6:05:d6:6a:be:74, Channel: 6, Auth: WPA2_PSK
+20:50:23.084 -> [   601][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 13 - STA_CONNECTED
+20:50:23.084 -> [   602][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 13 - STA_CONNECTED
+20:50:23.185 -> [   701][V][NetworkInterface.cpp:78] _onIpEvent(): sta Got New IP: 172.16.108.61 MASK: 255.255.0.0 GW: 172.16.0.1
+20:50:23.185 -> [   702][V][NetworkEvents.cpp:119] checkForEvent(): Network Event: 16 - STA_GOT_IP
+20:50:23.185 -> [   703][V][STA.cpp:110] _onStaArduinoEvent(): Arduino STA Event: 16 - STA_GOT_IP
+20:50:23.185 -> [   704][V][STA.cpp:169] _onStaArduinoEvent(): STA IP: 172.16.108.61, MASK: 255.255.0.0, GW: 172.16.0.1
+20:50:33.024 -> [ 10539][I][you-seven-pro-24-investigation.ino:29] connectWifi(): [you-seven-pro-24-investigation] Wifi Connected
+20:50:33.024 -> =========== After Setup Start ============
+20:50:33.024 -> INTERNAL Memory Info:
+20:50:33.024 -> ------------------------------------------
+20:50:33.024 ->   Total Size        :   308888 B ( 301.6 KB)
+20:50:33.024 ->   Free Bytes        :   226364 B ( 221.1 KB)
+20:50:33.024 ->   Allocated Bytes   :    75868 B (  74.1 KB)
+20:50:33.024 ->   Minimum Free Bytes:   195060 B ( 190.5 KB)
+20:50:33.024 ->   Largest Free Block:   114676 B ( 112.0 KB)
+20:50:33.024 -> ------------------------------------------
+20:50:33.024 -> GPIO Info:
+20:50:33.024 -> ------------------------------------------
+20:50:33.024 ->   GPIO : BUS_TYPE[bus/unit][chan]
+20:50:33.024 ->   --------------------------------------  
+20:50:33.024 ->     18 : USB_DM
+20:50:33.024 ->     19 : USB_DP
+20:50:33.024 ->     20 : UART_RX[0]
+20:50:33.024 ->     21 : UART_TX[0]
+20:50:33.024 -> ============ After Setup End =============
+20:50:33.058 -> [ 10571][W][you-seven-pro-24-investigation.ino:39] loop(): [you-seven-pro-24-investigation] WiFi Connected. Board paused, awaiting restart.
