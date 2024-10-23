@@ -47,26 +47,21 @@ These devices are a good mix of:
 - U7-Pro with firmware 7.0.76 and Enhanced IoT Connectivity Mode (Enabled)
 - observe serial monitor while a few feet away from a U7-Pro
 
-Result:
+Result: [TestA - U7 Pro](results/esp32-to-u7pro.log)
 
 #### Test Plan B
 - U7-Pro-wall with fimware 7.0.76 and Enhanced IoT Connectivity Mode (Enabled)
 - observe serial monitor while a few feet away from a U7-Pro-Wall
 
-Result: 
+Result: [TestB - U7 Pro Wall](results/esp32-to-u7prowall.log)
 
 #### Test Plan C
 - U6-Pro with firmware 6.6.77 and Enhanced IoT Connectivity Mode (Enabled)
 - observe serial monitor while just a few feet away from a U6-Pro
 
-Result: 
+Result: [TestC - U6 Pro](results/esp32-to-u6pro.log)
 
 ### Images
-
-Simple Test results
-[TestA - U7 Pro](results/esp32-to-u7pro.log)
-[TestB - U7 Pro Wall](results/esp32-to-u7prowall.log)
-[TestC - U6 Pro](results/esp32-to-u6pro.log)
 
 Hardware
 ![board](images/esp32.JPG?raw=true "ESP32 board")
