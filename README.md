@@ -64,9 +64,9 @@ Result:
 ### Images
 
 Simple Test results
-![TestA](results/esp32-to-u7pro.log?raw=true "U7 Pro test")
-![TestB](results/esp32-to-u7prowall.log?raw=true "U7 Pro-Wall test")
-![TestC](results/esp32-to-u6pro.log?raw=true "U6 Pro test")
+[TestA - U7 Pro](results/esp32-to-u7pro.log)
+[TestB - U7 Pro Wall](results/esp32-to-u7prowall.log)
+[TestC - U6 Pro](results/esp32-to-u6pro.log)
 
 Hardware
 ![board](images/esp32.JPG?raw=true "ESP32 board")
